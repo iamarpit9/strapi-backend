@@ -1,4 +1,4 @@
-export default () =>( {
+module.exports = {
   keepAlive: {
     task: async ({ strapi }) => {
       console.log("Cron job running");
@@ -14,4 +14,4 @@ export default () =>( {
       rule: '*/1 * * * *' // This will execute the task every minute
     },
   },
-})
+}
