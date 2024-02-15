@@ -1361,6 +1361,7 @@
     fs-extra "10.0.0"
     inquirer "8.2.5"
     lodash "4.17.21"
+    node-fetch "2.7.0"
     node-machine-id "^1.1.10"
     ora "^5.4.1"
     semver "7.5.4"
@@ -1603,6 +1604,15 @@
     "@strapi/utils" "4.20.0"
     sendmail "^1.6.1"
 
+"@strapi/provider-upload-cloudinary@^4.20.1":
+  version "4.20.1"
+  resolved "https://registry.npmjs.org/@strapi/provider-upload-cloudinary/-/provider-upload-cloudinary-4.20.1.tgz"
+  integrity sha512-XdDMmphMOev9XfT5XD4h2wDls8ibBoIDPLQpjnavy3U8+xHOJDjp/76XbCxcGY0EqfK/LLqBLvUuT5Hbr7K6yw==
+  dependencies:
+    "@strapi/utils" "4.20.1"
+    cloudinary "^1.41.0"
+    into-stream "^5.1.0"
+
 "@strapi/provider-upload-local@4.20.0":
   version "4.20.0"
   resolved "https://registry.npmjs.org/@strapi/provider-upload-local/-/provider-upload-local-4.20.0.tgz"
@@ -1743,6 +1753,18 @@
   version "4.20.0"
   resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.20.0.tgz"
   integrity sha512-hYzB88vrrx8aD4K6m573VzjBkptJmcwee15cROO5tgKoDRvXgGdlfrtxs3hnfGpFZNqPbBoteahU5DqCQr2qew==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@4.20.1":
+  version "4.20.1"
+  resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.20.1.tgz"
+  integrity sha512-lAyesvtMyDAznk+VPYYtpGZRReX3a9L5rDwbX3mV8ohVW3rs96td1+cViW8vNXvSBIei9RFSCwXswr7To+1Tqg==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -2985,6 +3007,21 @@ clone@^1.0.2:
   resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
 
+cloudinary-core@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.npmjs.org/cloudinary-core/-/cloudinary-core-2.13.0.tgz"
+  integrity sha512-Nt0Q5I2FtenmJghtC4YZ3MZZbGg1wLm84SsxcuVwZ83OyJqG9CNIGp86CiI6iDv3QobaqBUpOT7vg+HqY5HxEA==
+
+cloudinary@^1.41.0:
+  version "1.41.3"
+  resolved "https://registry.npmjs.org/cloudinary/-/cloudinary-1.41.3.tgz"
+  integrity sha512-4o84y+E7dbif3lMns+p3UW6w6hLHEifbX/7zBJvaih1E9QNMZITENQ14GPYJC4JmhygYXsuuBb9bRA3xWEoOfg==
+  dependencies:
+    cloudinary-core "^2.13.0"
+    core-js "^3.30.1"
+    lodash "^4.17.21"
+    q "^1.5.1"
+
 co-body@^5.1.1:
   version "5.2.0"
   resolved "https://registry.npmjs.org/co-body/-/co-body-5.2.0.tgz"
@@ -3282,6 +3319,11 @@ core-js-pure@^3.23.3, core-js-pure@^3.30.2:
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.35.1.tgz"
   integrity sha512-zcIdi/CL3MWbBJYo5YCeVAAx+Sy9yJE9I3/u9LkFABwbeaPhTMRWraM8mYFp9jW5Z50hOy7FVzCc8dCrpZqtIQ==
 
+core-js@^3.30.1:
+  version "3.36.0"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.36.0.tgz"
+  integrity sha512-mt7+TUBbTFg5+GngsAxeKBTl5/VS0guFeJacYge9OmHb+m058UwwIm41SE9T4Den7ClatV57B6TYTuJ0CX1MAw==
+
 core-util-is@^1.0.2, core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
@@ -3407,11 +3449,6 @@ csstype@^3.0.2:
   version "3.1.3"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
-
-data-uri-to-buffer@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz"
-  integrity sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==
 
 date-fns@^2.30.0, date-fns@2.30.0:
   version "2.30.0"
@@ -4195,14 +4232,6 @@ fecha@^4.2.0:
   resolved "https://registry.npmjs.org/fecha/-/fecha-4.2.3.tgz"
   integrity sha512-OP2IUU6HeYKJi3i0z4A19kHMQoLVs4Hc+DPqqxI2h/DPZHTm/vjsfC6P0b4jCMy14XizLBqvndQ+UilD7707Jw==
 
-fetch-blob@^3.1.2, fetch-blob@^3.1.4:
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz"
-  integrity sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==
-  dependencies:
-    node-domexception "^1.0.0"
-    web-streams-polyfill "^3.0.3"
-
 figures@^3.0.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/figures/-/figures-3.2.0.tgz"
@@ -4334,13 +4363,6 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
-
-formdata-polyfill@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz"
-  integrity sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==
-  dependencies:
-    fetch-blob "^3.1.2"
 
 formidable@^1.1.1:
   version "1.2.6"
@@ -5170,6 +5192,14 @@ intl-messageformat@10.3.4:
     "@formatjs/icu-messageformat-parser" "2.3.1"
     tslib "^2.4.0"
 
+into-stream@^5.1.0:
+  version "5.1.1"
+  resolved "https://registry.npmjs.org/into-stream/-/into-stream-5.1.1.tgz"
+  integrity sha512-krrAJ7McQxGGmvaYbB7Q1mcA+cRwg9Ij2RfWIeVesNBgVDZmzY/Fa4IpZUT3bmdRzMzdf/mzltCG2Dq99IZGBA==
+  dependencies:
+    from2 "^2.3.0"
+    p-is-promise "^3.0.0"
+
 into-stream@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/into-stream/-/into-stream-6.0.0.tgz"
@@ -5962,7 +5992,7 @@ lodash.isplainobject@4.0.6:
   resolved "https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz"
   integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
-lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@4.17.21:
+lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@>=4.0, lodash@4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -6466,20 +6496,6 @@ node-addon-api@^6.1.0:
   version "6.1.0"
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-6.1.0.tgz"
   integrity sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==
-
-node-domexception@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
-  integrity sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==
-
-node-fetch@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-3.3.2.tgz"
-  integrity sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==
-  dependencies:
-    data-uri-to-buffer "^4.0.0"
-    fetch-blob "^3.1.4"
-    formdata-polyfill "^4.0.10"
 
 node-fetch@2.7.0:
   version "2.7.0"
@@ -7369,6 +7385,11 @@ purest@4.0.2:
     request-compose "^2.1.4"
     request-multipart "^1.0.0"
     request-oauth "^1.0.1"
+
+q@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.npmjs.org/q/-/q-1.5.1.tgz"
+  integrity sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==
 
 qs@^6.10.3:
   version "6.11.2"
@@ -9275,11 +9296,6 @@ wcwidth@^1.0.1:
   integrity sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==
   dependencies:
     defaults "^1.0.3"
-
-web-streams-polyfill@^3.0.3:
-  version "3.3.2"
-  resolved "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.3.2.tgz"
-  integrity sha512-3pRGuxRF5gpuZc0W+EpwQRmCD7gRqcDOMt688KmdlDAgAyaB1XlN0zq2njfDNm44XVdIouE7pZ6GzbdyH47uIQ==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
